@@ -1,9 +1,11 @@
 {
   "layer": "top",
   "width": 1000,
-  "modules-left": ["pulseaudio", "cava"],
+  "margin-left": 8,
+  "margin-right": 8,
+  "modules-left": ["pulseaudio", "cava", "backlight"],
   "modules-center": ["clock", "hyprland/workspaces", "clock#right"],
-  "modules-right": ["battery"],
+  "modules-right": ["bluetooth", "network", "battery"],
   "sway/window": {
     "max-length": 50,
   },
@@ -14,6 +16,11 @@
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
     },
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
   },
   "clock": {
     "format": "{:%H}",
@@ -35,6 +42,28 @@
       "9": "",
       "10": "",
     },
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "󰖩  {essid}",
+    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+    "format-disconnected": "󰖪", //An empty format will hide the module.
+    "tooltip-format": "󰊗  {ifname} via {gwaddr}",
+    "tooltip-format-wifi": "󰖩  {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+  },
+  "bluetooth": {
+    "format": "󰂯 ON",
+    "format-disabled": "󰂲 OFF",
+    "format-connected": "󰂯 {device_alias}",
+    "format-connected-battery": "󰂯 {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -58,7 +87,7 @@
     // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
     "framerate": 30,
     "autosens": 0,
-    "sensitivity": 5,
+    "sensitivity": 3,
     "bars": 14,
     "lower_cutoff_freq": 50,
     "higher_cutoff_freq": 10000,
@@ -71,7 +100,7 @@
     "bar_delimiter": 0,
     "monstercat": false,
     "waves": false,
-    "noise_reduction": 0.25,
+    "noise_reduction": 0.1,
     "input_delay": 2,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "actions": {
