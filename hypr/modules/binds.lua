@@ -59,6 +59,20 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+-- Touchpad-friendly resize (hold SUPER + ALT, then move touchpad)
+hl.bind(mainMod .. " + ALT_L", hl.dsp.window.resize(), { mouse = true })
+
+-- Resize submap: press SUPER + ALT + R to enter, arrow keys to resize, Escape to exit
+hl.bind(mainMod .. " + ALT + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+    hl.bind("right", hl.dsp.window.resize({ x = 30, y = 0, relative = true }), { repeating = true })
+    hl.bind("left", hl.dsp.window.resize({ x = -30, y = 0, relative = true }), { repeating = true })
+    hl.bind("up", hl.dsp.window.resize({ x = 0, y = -30, relative = true }), { repeating = true })
+    hl.bind("down", hl.dsp.window.resize({ x = 0, y = 30, relative = true }), { repeating = true })
+    hl.bind("escape", hl.dsp.submap("reset"))
+    hl.bind("return", hl.dsp.submap("reset"))
+end)
+
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
     { locked = true, repeating = true })
