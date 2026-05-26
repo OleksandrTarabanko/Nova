@@ -38,4 +38,9 @@ hl.layer_rule({
     animation  = "slide bottom",
     dim_around = true
 })
--- overlayLayerRule:set_enabled(false)
+
+hl.layer_rule({
+    name      = "notification-animations",
+    match     = { namespace = "swaync-control-center" },
+    animation = "slide right",
+})
