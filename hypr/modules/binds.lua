@@ -5,7 +5,7 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "nautilus"
-local menu        = "rofi -show drun"
+local menu        = ".config/rofi/type-2/launcher.sh"
 
 
 ---------------------
