@@ -35,11 +35,11 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen_state({ action = "toggle", i
 -- 2. MEDIA & GAME MODE (Great for MPV, YouTube Videos, Gaming)
 -- True Fullscreen: Hides Waybar, hides app tabs, grabs mouse, maximizes performance.
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ action = "toggle", internal = 2, client = 2 }))
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+-- Move focus with mainMod + arrow keys (same-monitor first, cross only at edges)
+hl.bind(mainMod .. " + left", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh l"))
+hl.bind(mainMod .. " + right", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh r"))
+hl.bind(mainMod .. " + up", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh u"))
+hl.bind(mainMod .. " + down", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh d"))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
