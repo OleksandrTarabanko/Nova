@@ -28,6 +28,7 @@ hl.bind(mainMod .. " + R", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox & disown"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 -- 1. GLOBAL WORK MODE (Great for Browser, Terminal, IDE)
 -- Maximizes the layout but preserves tabs, UI elements, and sidebars.
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen_state({ action = "toggle", internal = 2, client = 0 }))
