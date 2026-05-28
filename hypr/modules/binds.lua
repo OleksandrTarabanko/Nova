@@ -23,7 +23,7 @@ hl.bind(mainMod .. " + M",
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts/launch.sh"))
+hl.bind(mainMod .. " + CTRL + SHIFT + P", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts/launch.sh"))
 hl.bind(mainMod .. " + R", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox & disown"))
@@ -76,12 +76,12 @@ end)
 
 -- Screenshots (area selection)
 -- File screenshot
-hl.bind("CTRL + P",
+hl.bind(mainMod .. " + P",
     hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'"))
 -- Copy screenshot
-hl.bind("CTRL + SHIFT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | wl-copy'"))
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | wl-copy'"))
 -- Annotate screenshot
-hl.bind("ALT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" /tmp/ss.png && swappy -f /tmp/ss.png'"))
+hl.bind(mainMod .. " + ALT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" /tmp/ss.png && swappy -f /tmp/ss.png'"))
 
 -- Clipboard Manager
 hl.bind(mainMod .. " + V",
