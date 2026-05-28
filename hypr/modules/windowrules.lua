@@ -39,6 +39,14 @@ hl.layer_rule({
     dim_around = true
 })
 
+hl.window_rule({
+    name  = "clipse-float",
+    match = { class = "clipse" },
+    float = true,
+    size  = { 622, 652 },
+    pin   = true,
+})
+
 hl.layer_rule({
     name      = "notification-animations",
     match     = { namespace = "swaync-control-center" },
