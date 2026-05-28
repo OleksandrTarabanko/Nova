@@ -1,11 +1,14 @@
 Hyprland config
 
-1. Hyprland Configuration
-2. Waybar Configuration (Modules Bar)
-3. Rofi Configuration (Search Bar)
-4. SwayNC Configuration (Notification Center)
-5. Kitty + Fish + Spaceship (Terminal)
-6. Hyprlock (Lock Screen) + Hypridle (Idle Behaviour) + Wlopm (To bypass old "hyperctl dispatch" syntax, because of Lua)
+1. Hyprland configuration
+2. Screen sharing (PipeWire, wireplimber, xdg-desktop-portal, xdg-desktop-portal-hyprland)
+3. Wallpapers (awww daemon)
+4. Waybar configuration (Modules Bar)
+5. Rofi configuration (Search Bar)
+6. SwayNC configuration (Notification Center)
+7. Kitty + Fish + Spaceship (Terminal)
+8. Hyprlock (Lock Screen) + Hypridle (Idle Behaviour) + Wlopm (To bypass old "hyperctl dispatch" syntax, because of Lua)
+9. File screenshot + Clipboard screenshot + Screenshot area selection + Editing screenshots (grim, wl-clipboard, slurp, swappy)
 
 Useful Links:
 
