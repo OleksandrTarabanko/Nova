@@ -74,6 +74,15 @@ hl.define_submap("resize", function()
     hl.bind("return", hl.dsp.submap("reset"))
 end)
 
+-- Screenshots (area selection)
+-- File screenshot
+hl.bind("CTRL + P",
+    hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'"))
+-- Copy screenshot
+hl.bind("CTRL + SHIFT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | wl-copy'"))
+-- Annotate screenshot
+hl.bind("ALT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" /tmp/ss.png && swappy -f /tmp/ss.png'"))
+
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
     { locked = true, repeating = true })
