@@ -5,7 +5,7 @@
   "margin-right": 8,
   "modules-left": ["pulseaudio", "cava", "backlight"],
   "modules-center": ["clock", "hyprland/workspaces", "clock#right"],
-  "modules-right": ["bluetooth", "network", "battery"],
+  "modules-right": ["custom/vpn", "bluetooth", "network", "battery"],
   "sway/window": {
     "max-length": 50,
   },
@@ -42,6 +42,13 @@
       "9": "",
       "10": "",
     },
+  },
+  "custom/vpn": {
+    "exec": "~/.config/waybar/scripts/vpn.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "tooltip": true,
   },
   "network": {
     "format": "{ifname}",
