@@ -7,28 +7,30 @@ dir=$1
 
 # Map short direction letters to full names for hl.dsp.focus
 case "$dir" in
-    l) full_dir="l" ;;
-    r) full_dir="r" ;;
-    u) full_dir="u" ;;
-    d) full_dir="d" ;;
+    l) full_dir="left" ;;
+    r) full_dir="right" ;;
+    u) full_dir="up" ;;
+    d) full_dir="down" ;;
     *) exit 1 ;;
 esac
 
 current=$(hyprctl activewindow -j)
 current_addr=$(echo "$current" | jq -r '.address')
 current_mon=$(echo "$current" | jq '.monitor')
+current_ws=$(echo "$current" | jq '.workspace.id')
 cur_cx=$(echo "$current" | jq '(.at[0] + .size[0] / 2)')
 cur_cy=$(echo "$current" | jq '(.at[1] + .size[1] / 2)')
 
-# Find the closest window on the same monitor in the given direction
+# Find the closest window on the same monitor AND workspace in the given direction
 case "$dir" in
     l)
         best=$(hyprctl clients -j | jq -r \
             --argjson mon "$current_mon" \
+            --argjson ws "$current_ws" \
             --arg addr "$current_addr" \
             --argjson cx "$cur_cx" \
             --argjson cy "$cur_cy" \
-            '[.[] | select(.monitor == $mon and .address != $addr and .mapped == true)
+            '[.[] | select(.monitor == $mon and .workspace.id == $ws and .address != $addr and .mapped == true)
                   | select((.at[0] + .size[0] / 2) < $cx)]
              | sort_by( ((.at[0] + .size[0]/2) - $cx) * ((.at[0] + .size[0]/2) - $cx)
                       + ((.at[1] + .size[1]/2) - $cy) * ((.at[1] + .size[1]/2) - $cy) )
@@ -37,10 +39,11 @@ case "$dir" in
     r)
         best=$(hyprctl clients -j | jq -r \
             --argjson mon "$current_mon" \
+            --argjson ws "$current_ws" \
             --arg addr "$current_addr" \
             --argjson cx "$cur_cx" \
             --argjson cy "$cur_cy" \
-            '[.[] | select(.monitor == $mon and .address != $addr and .mapped == true)
+            '[.[] | select(.monitor == $mon and .workspace.id == $ws and .address != $addr and .mapped == true)
                   | select((.at[0] + .size[0] / 2) > $cx)]
              | sort_by( ((.at[0] + .size[0]/2) - $cx) * ((.at[0] + .size[0]/2) - $cx)
                       + ((.at[1] + .size[1]/2) - $cy) * ((.at[1] + .size[1]/2) - $cy) )
@@ -49,10 +52,11 @@ case "$dir" in
     u)
         best=$(hyprctl clients -j | jq -r \
             --argjson mon "$current_mon" \
+            --argjson ws "$current_ws" \
             --arg addr "$current_addr" \
             --argjson cx "$cur_cx" \
             --argjson cy "$cur_cy" \
-            '[.[] | select(.monitor == $mon and .address != $addr and .mapped == true)
+            '[.[] | select(.monitor == $mon and .workspace.id == $ws and .address != $addr and .mapped == true)
                   | select((.at[1] + .size[1] / 2) < $cy)]
              | sort_by( ((.at[0] + .size[0]/2) - $cx) * ((.at[0] + .size[0]/2) - $cx)
                       + ((.at[1] + .size[1]/2) - $cy) * ((.at[1] + .size[1]/2) - $cy) )
@@ -61,10 +65,11 @@ case "$dir" in
     d)
         best=$(hyprctl clients -j | jq -r \
             --argjson mon "$current_mon" \
+            --argjson ws "$current_ws" \
             --arg addr "$current_addr" \
             --argjson cx "$cur_cx" \
             --argjson cy "$cur_cy" \
-            '[.[] | select(.monitor == $mon and .address != $addr and .mapped == true)
+            '[.[] | select(.monitor == $mon and .workspace.id == $ws and .address != $addr and .mapped == true)
                   | select((.at[1] + .size[1] / 2) > $cy)]
              | sort_by( ((.at[0] + .size[0]/2) - $cx) * ((.at[0] + .size[0]/2) - $cx)
                       + ((.at[1] + .size[1]/2) - $cy) * ((.at[1] + .size[1]/2) - $cy) )
