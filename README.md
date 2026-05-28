@@ -9,6 +9,7 @@ Hyprland config
 7. Kitty + Fish + Spaceship (Terminal)
 8. Hyprlock (Lock Screen) + Hypridle (Idle Behaviour) + Wlopm (To bypass old "hyperctl dispatch" syntax, because of Lua)
 9. File screenshot + Clipboard screenshot + Screenshot area selection + Editing screenshots (grim, wl-clipboard, slurp, swappy)
+10. Clipboard Manager (clipse)
 
 Useful Links:
 
