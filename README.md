@@ -10,13 +10,12 @@ Hyprland config
 8. Hyprlock (Lock Screen) + Hypridle (Idle Behaviour) + Wlopm (To bypass old "hyperctl dispatch" syntax, because of Lua)
 9. File screenshot + Clipboard screenshot + Screenshot area selection + Editing screenshots (grim, wl-clipboard, slurp, swappy)
 10. Clipboard Manager (clipse)
-11. 
-11.1) Themes ( "~/.themes" folder + nwg-look gsettings-desktop-schemas) <br />
-11.2) Graphite Theme (sassc + gtk-engine-murrine (GKT2) + gnome-themes-extra) <br />
-11.3) Font ("Rubik" - ttf-rubik) <br />
-11.4) Icon theme (tela-circle-icon-theme-standard +
-tela-circle-icon-theme-black) <br />
-
+11. <br />
+    11.1) Themes ( "~/.themes" folder + nwg-look gsettings-desktop-schemas) <br />
+    11.2) Graphite Theme (sassc + gtk-engine-murrine (GKT2) + gnome-themes-extra) <br />
+    11.3) Font ("Rubik" - ttf-rubik) <br />
+    11.4) Icon theme (tela-circle-icon-theme-standard +
+    tela-circle-icon-theme-black) <br />
 
 Useful Links:
 
