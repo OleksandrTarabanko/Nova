@@ -35,7 +35,7 @@ hl.window_rule({
 hl.layer_rule({
     name       = "rofi-popup",
     match      = { namespace = "rofi" },
-    animation  = "slide bottom",
+    animation  = "fade",
     dim_around = true
 })
 
