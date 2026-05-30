@@ -12,7 +12,7 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/type-2"
-theme='style-15'
+theme='style-10'
 
 ## Run
 pkill rofi || rofi \

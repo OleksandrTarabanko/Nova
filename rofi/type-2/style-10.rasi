@@ -20,22 +20,12 @@ configuration {
 @import                          "shared/fonts.rasi"
 
 * {
-    /* For Screens with 1920x1080 resolution */
-    screen-margin:               180px 150px;
-    box-spacing:                 40px;
-    icon-size:                   96px;
-    element-padding:             30px;
-    element-spacing:             15px;
-
-    /* For Screens with 1366x768 resolution */
-    /*
-    screen-margin:               120px 60px;
-    box-spacing:                 40px;
-    icon-size:                   64px;
-    element-padding:             20px;
-    element-spacing:             10px;
-    */
-    /* Use this as reference and create for your screen resolution */
+    /* Compact defaults to keep 3 visible rows on 1366x768 and larger */
+    screen-margin:               80px 60px;
+    box-spacing:                 16px;
+    icon-size:                   52px;
+    element-padding:             10px;
+    element-spacing:             8px;
 }
 
 /*****----- Main Window -----*****/
@@ -110,10 +100,10 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     8;
-    lines:                       3;
+    columns:                     6;
+    lines:                       4;
     cycle:                       true;
-    dynamic:                     true;
+    dynamic:                     false;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
@@ -121,7 +111,7 @@ listview {
     fixed-columns:               true;
     
     spacing:                     @element-spacing;
-    margin:                      0px;
+    margin:                      30px 0px 0px 0px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
