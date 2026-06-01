@@ -3,7 +3,7 @@
   "width": 1000,
   "margin-left": 8,
   "margin-right": 8,
-  "modules-left": ["pulseaudio", "cava", "backlight"],
+  "modules-left": ["pulseaudio", "cava", "custom/mic", "backlight"],
   "modules-center": ["clock", "hyprland/workspaces", "clock#right"],
   "modules-right": ["custom/vpn", "bluetooth", "network", "battery"],
   "sway/window": {
@@ -42,6 +42,14 @@
       "9": "",
       "10": "",
     },
+  },
+  "custom/mic": {
+    "exec": "~/.config/waybar/scripts/mic.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "{}",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": true,
   },
   "custom/vpn": {
     "exec": "~/.config/waybar/scripts/vpn.sh",
