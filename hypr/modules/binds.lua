@@ -85,7 +85,7 @@ hl.bind(mainMod .. " + ALT + P", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" /t
 
 -- Clipboard Manager
 hl.bind(mainMod .. " + V",
-    hl.dsp.exec_cmd("kitty --class clipse -e clipse"))
+    hl.dsp.exec_cmd("kitty --class clipse --override background=#141414 --override foreground=#e8e8e8 -e clipse"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),

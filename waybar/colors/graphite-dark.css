@@ -1,0 +1,49 @@
+/* GRAPHITE DARK THEME */
+@define-color bg_dim #141414;
+@define-color bg0 #e8e8e8;
+@define-color bg1 #242424;
+@define-color bg2 #2c2c2c;
+@define-color bg3 #343434;
+@define-color bg4 #3c3c3c;
+@define-color bg5 #474747;
+
+@define-color bg_statusline1 #242424;
+@define-color bg_statusline2 #2c2c2c;
+@define-color bg_statusline3 #3c3c3c;
+
+@define-color bg_current_word #2c2c2c;
+
+@define-color fg0 #1d1d1d;
+@define-color fg1 #ffffff;
+
+@define-color grey0 #5e5c64;
+@define-color grey1 #6e6d71;
+@define-color grey2 #999999;
+
+@define-color bg_diff_red #3d2020;
+@define-color bg_visual_red #4d2828;
+@define-color bg_red #f28b82;
+@define-color red #f28b82;
+
+@define-color bg_diff_green #1e3020;
+@define-color bg_visual_green #253828;
+@define-color bg_green #81c995;
+@define-color green #81c995;
+
+@define-color bg_diff_blue #1a2840;
+@define-color bg_visual_blue #223050;
+@define-color bg_blue #83b6ec;
+@define-color blue #83b6ec;
+
+@define-color bg_visual_yellow #3d3420;
+@define-color bg_yellow #fdd633;
+@define-color yellow #fdd633;
+
+@define-color bg_visual_purple #2d2040;
+@define-color purple #ce93d8;
+
+@define-color orange #ffa95a;
+
+@define-color aqua #7ad9f1;
+
+@define-color active #60DD2A;

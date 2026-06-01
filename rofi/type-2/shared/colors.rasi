@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/type-2/colors/gruvbox-material.rasi"
+@import "~/.config/rofi/type-2/colors/graphite-dark.rasi"
