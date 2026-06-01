@@ -16,6 +16,7 @@ Hyprland config
     11.3) Font ("Rubik" - ttf-rubik) <br />
     11.4) Icon theme (tela-circle-icon-theme-standard +
     tela-circle-icon-theme-black) <br />
+    11.5) Cursor (bibata-cursor-theme)
 
 Useful Links:
 
