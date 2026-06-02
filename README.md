@@ -18,6 +18,7 @@ Hyprland config
     tela-circle-icon-theme-black) <br />
     11.5) Cursor (bibata-cursor-theme) 
 12. Clipboard Manager (clipse) 
+13. Smarter cd (zoxide)
 
 Useful Links:
 
