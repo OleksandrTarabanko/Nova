@@ -40,6 +40,11 @@ hl.bind(mainMod .. " + left", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh l
 hl.bind(mainMod .. " + right", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh r"))
 hl.bind(mainMod .. " + up", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh u"))
 hl.bind(mainMod .. " + down", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus.sh d"))
+-- Move windows with mainMod + SHIFT + arrow keys
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
@@ -113,3 +118,7 @@ hl.bind("SUPER + X", function()
     hl.dispatch(hl.dsp.window.move({ workspace = "special:minimize" }))
     hl.dispatch(hl.dsp.workspace.toggle_special("minimize"))
 end)
+
+-- Column behaviour
+hl.bind(mainMod .. " + I", hl.dsp.layout("consume")) -- pull into prev column
+hl.bind(mainMod .. " + O", hl.dsp.layout("expel"))   -- push out to own column
