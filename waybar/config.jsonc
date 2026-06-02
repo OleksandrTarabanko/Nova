@@ -5,7 +5,7 @@
   "margin-right": 8,
   "modules-left": ["pulseaudio", "cava", "custom/mic", "backlight"],
   "modules-center": ["clock", "hyprland/workspaces", "clock#right"],
-  "modules-right": ["custom/vpn", "bluetooth", "network", "battery"],
+  "modules-right": ["custom/vpn", "custom/bluetooth", "network", "battery"],
   "sway/window": {
     "max-length": 50,
   },
@@ -69,16 +69,13 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
   },
-  "bluetooth": {
-    "format": "󰂯 ON",
-    "format-disabled": "󰂲 OFF",
-    "format-connected": "󰂯 {device_alias}",
-    "format-connected-battery": "󰂯 {device_alias} {device_battery_percentage}%",
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "blueman-manager",
+    "tooltip": true,
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
