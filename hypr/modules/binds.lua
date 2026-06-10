@@ -15,7 +15,7 @@ local menu        = ".config/rofi/type-2/launcher.sh"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + CTRL + SHIFT + M",
@@ -65,9 +65,6 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
--- Touchpad-friendly resize (hold SUPER + ALT, then move touchpad)
-hl.bind(mainMod .. " + ALT_L", hl.dsp.window.resize(), { mouse = true })
 
 -- Resize submap: press SUPER + ALT + R to enter, arrow keys to resize, Escape to exit
 hl.bind(mainMod .. " + ALT + R", hl.dsp.submap("resize"))
@@ -121,5 +118,5 @@ hl.bind("SUPER + X", function()
 end)
 
 -- Column behavior
-hl.bind(mainMod .. " + I", hl.dsp.layout("consume")) -- pull into prev column
 hl.bind(mainMod .. " + O", hl.dsp.layout("expel"))   -- push out to own column
+hl.bind(mainMod .. " + I", hl.dsp.layout("consume")) -- pull into prev column
