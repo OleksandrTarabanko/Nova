@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/type-2/colors/graphite-dark.rasi"
+@import "~/.config/rofi/types/colors/graphite-dark.rasi"
