@@ -5,7 +5,8 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "nautilus"
-local menu        = ".config/rofi/type-2/launcher.sh"
+local menu        = ".config/rofi/types/launcher.sh"
+local fileMenu    = ".config/rofi/types/launcher-files.sh"
 
 
 ---------------------
@@ -23,6 +24,7 @@ hl.bind(mainMod .. " + CTRL + SHIFT + M",
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + CTRL + Space", hl.dsp.exec_cmd(fileMenu))
 hl.bind(mainMod .. " + CTRL + SHIFT + P", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts/launch.sh"))
 hl.bind(mainMod .. " + R", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -52,15 +54,17 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+-- Switch to next/previous workspace with mainMod + bracket keys
+hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "e-1" }))
+-- Scroll through existing workspaces with mainMod + scroll
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Example special workspace (scratchpad) (Magic workspace)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "e+0" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -77,7 +81,7 @@ hl.define_submap("resize", function()
     hl.bind("return", hl.dsp.submap("reset"))
 end)
 
--- Screenshots (area selection)
+-- Screenshots
 -- File screenshot
 hl.bind(mainMod .. " + P",
     hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'"))
