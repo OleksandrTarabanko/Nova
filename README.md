@@ -16,10 +16,11 @@ Hyprland config
     11.3) Font ("Rubik" - ttf-rubik) <br />
     11.4) Icon theme (tela-circle-icon-theme-standard +
     tela-circle-icon-theme-black) <br />
-    11.5) Cursor (bibata-cursor-theme) 
-12. Clipboard Manager (clipse) 
+    11.5) Cursor (bibata-cursor-theme)
+12. Clipboard Manager (clipse)
 13. Smarter cd (zoxide)
 14. Volume mixer (pavucontrol)
+15. GNU Image Manipulation Program (gimp)
 
 Useful Links:
 
