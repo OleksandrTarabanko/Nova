@@ -39,13 +39,6 @@ window#waybar > box {
   transition: none;
 }
 
-#clock,
-#clock#right {
-  margin: 0 10px;
-  font-weight: 700;
-  font-size: 1.12rem;
-}
-
 .modules-left {
   margin-left: 12px;
 }
@@ -54,14 +47,21 @@ window#waybar > box {
   margin-right: 12px;
 }
 
+#clock,
+#clock#right {
+  margin: 0 10px;
+  font-weight: 700;
+  font-size: 1.12rem;
+}
+
+#pulseaudio.muted {
+  padding: 0 5px;
+}
+
 #cava {
   margin: 0 15px 0 10px;
   font-size: 0.7rem;
   letter-spacing: 1px;
-}
-
-#network {
-  margin: 0 20px 0 15px;
 }
 
 #custom-mic {
@@ -72,17 +72,38 @@ window#waybar > box {
   color: @grey0;
 }
 
+#backlight {
+  margin: 0 15px 0 0;
+  min-height: 1rem;
+}
+
+#network {
+  margin: 0 17px 0 0;
+}
+
+#custom-bluetooth {
+  margin: 0 15px 0 0;
+}
+
+#custom-swaync {
+  margin: 0 15px 0 0;
+  font-size: 1rem;
+}
+
+#custom-swaync.has-notifications {
+  margin: 0 10px 0 0;
+}
+
+#custom-swaync.empty {
+  color: @grey0;
+}
+
 #custom-vpn {
   margin: 0 15px 0 0;
 }
 
 #custom-vpn.disconnected {
   color: @grey0;
-}
-
-#backlight {
-  margin: 0 10px 0 0;
-  min-height: 1rem;
 }
 
 tooltip {
