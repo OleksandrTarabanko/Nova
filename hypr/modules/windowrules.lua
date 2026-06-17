@@ -35,7 +35,7 @@ hl.window_rule({
 hl.layer_rule({
     name       = "rofi-popup",
     match      = { namespace = "rofi" },
-    animation  = "fade",
+    animation  = "slide bottom",
     dim_around = true
 })
 
@@ -43,7 +43,7 @@ hl.window_rule({
     name  = "clipse-float",
     match = { class = "clipse" },
     float = true,
-    size  = { 622, 652 },
+    size  = { 625, 655 },
     pin   = true,
 })
 
