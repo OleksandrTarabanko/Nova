@@ -20,7 +20,8 @@ Hyprland config
 12. Clipboard Manager (clipse)
 13. Smarter cd (zoxide)
 14. Volume mixer (pavucontrol)
-15. GNU Image Manipulation Program (gimp)
+15. Bluetooth Manager (blueman)
+16. GNU Image Manipulation Program (gimp)
 
 Useful Links:
 
