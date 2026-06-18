@@ -57,7 +57,7 @@
     "return-type": "json",
     "interval": 2,
     "format": "{}",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click": "~/.config/waybar/scripts/mic-mute-all.sh",
     "tooltip": true,
   },
   "custom/swaync": {
@@ -109,7 +109,8 @@
       "default": ["󰖀", "󰕾"],
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "~/.config/waybar/scripts/sink-switcher.sh --pick",
+    "on-click-right": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
   },
   "cava": {

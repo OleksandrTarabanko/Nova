@@ -65,7 +65,7 @@ window#waybar > box {
 }
 
 #custom-mic {
-  margin: 0 15px 0 0;
+  margin: 0px 15px 0px 0;
 }
 
 #custom-mic.muted {
