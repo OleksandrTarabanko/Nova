@@ -27,7 +27,8 @@ hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + CTRL + Space", hl.dsp.exec_cmd(fileMenu))
 hl.bind(mainMod .. " + CTRL + SHIFT + P", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts/launch.sh"))
 hl.bind(mainMod .. " + R", hl.dsp.window.pseudo())
--- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))                                       -- dwindle only
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-layout.sh")) -- toggle dwindle/scrolling
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox & disown"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("playerctl -a pause; hyprlock"))
@@ -101,7 +102,7 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO
     { locked = true, repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
     { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("~/.config/waybar/scripts/mic-mute-all.sh"),
     { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
@@ -122,5 +123,5 @@ hl.bind("SUPER + X", function()
 end)
 
 -- Column behavior
-hl.bind(mainMod .. " + O", hl.dsp.layout("expel"))   -- push out to own column
-hl.bind(mainMod .. " + I", hl.dsp.layout("consume")) -- pull into prev column
+hl.bind(mainMod .. " + O", hl.dsp.layout("expel"))   -- scolling only - push out to own column
+hl.bind(mainMod .. " + I", hl.dsp.layout("consume")) -- scolling only - pull into prev column
